@@ -1,6 +1,6 @@
 <div ng-controller="calculateController">
 	<input ng-model="value" type="text" />
     Mean: {{calcMean(value)}}
-    Median: {{calculateService.median(value)}}
-    Mode: {{calculateService.mode(value)}}
+    Median: {{calcMedian(value)}}
+    Mode: {{calcMode(value)}}
 </div>

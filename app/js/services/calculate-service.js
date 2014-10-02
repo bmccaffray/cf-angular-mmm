@@ -17,7 +17,7 @@ module.exports = function(app){
 				mean /= numArray.length;
 
 				mean = Math.round(mean * 100) / 100;
-
+				console.log(mean);
 				return mean;
 			},
 			median: function(numArray){
