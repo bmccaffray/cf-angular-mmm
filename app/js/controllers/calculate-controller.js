@@ -4,10 +4,10 @@ module.exports = function(app){
 	app.controller('calculateController', function($scope){
 
 		$scope.mean = function(numArray){
-			numArray = $scope.parseStr(numArray);
-			console.log(numArray);
 			if(!numArray){
 				return '';
+			} else {
+				numArray = $scope.parseStr(numArray);
 			}
 			var mean = 0;
 
@@ -22,9 +22,10 @@ module.exports = function(app){
 		};
 
 		$scope.median = function(numArray){
-			console.log(numArray);
 			if(!numArray){
 				return '';
+			} else {
+				numArray = $scope.parseStr(numArray);
 			}
 			var medianMin = 0, medianMax = 0, median = 0;
 			if((numArray.length % 2) == 0){
@@ -39,9 +40,10 @@ module.exports = function(app){
 		};
 
 		$scope.mode = function(numArray){
-			console.log(numArray);
 			if(!numArray){
 				return '';
+			} else {
+				numArray = $scope.parseStr(numArray);
 			}
 			var mode = 0;
 			var modeNum;
@@ -67,8 +69,10 @@ module.exports = function(app){
 			return mode;
 		};
 
-		$scope.parseStr = function(string){
-			return 'NO!';
+		$scope.parseStr = function(nums){
+			var numArray = nums.split(' ').map(function(x){return parseInt(x)});
+			numArray.sort(function(a, b){return a-b});
+			return numArray;
 		};
 
 	});
