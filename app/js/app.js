@@ -9,6 +9,8 @@ require('./controllers/calculate-controller')(mmmApp);
 
 require('./services/calculate-service')(mmmApp);
 
+require('./directives/calculate-directive')(mmmApp);
+
 mmmApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/', {
 		templateUrl: 'views/calculate.html',
